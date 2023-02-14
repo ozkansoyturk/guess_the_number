@@ -1,1 +1,1 @@
-# Guess th number
+# Guess the number
