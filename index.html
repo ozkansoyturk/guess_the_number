@@ -4,29 +4,30 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
     <title>Guess the number</title>
   </head>
   <body>
     <h1>Guess the number</h1>
     <h3>between 0 and 100</h3>
 
-    <input type="text" />
-
     <script>
-      function getRandomInt(max) {
-        return Math.floor(Math.random() * (max + 1));
-      }
-      const solution = getRandomInt(100);
+      const solution = Math.floor(Math.random() * 11);
       console.log(solution);
-
       function isRight(n) {
         return solution === n;
       }
-
-      const guess = () => {
-        return prompt("Guess the number");
-      };
+      function guess() {
+        const number = prompt("Entrez un nombre") * 1;
+        return isRight(number);
+      }
+      for (i = 0; i < 3; i++) {
+        if (guess()) {
+          console.log("Bravo !");
+          break;
+        } else if (i === 2) {
+          console.log("Vous avez perdu :(");
+        }
+      }
     </script>
   </body>
 </html>
